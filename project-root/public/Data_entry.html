@@ -1,136 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="Data_entry.css">
-  <!-- Include jQuery library -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  
-  <!-- Include jQuery UI library -->
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-  <title>Railway System</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Data_entry.css">
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Include jQuery UI library -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>Railway System</title>
 
 </head>
+
 <body>
-  <div class="container">
-    <h2>Stations</h2>
-
-    <!-- Form to add a new station -->
-    <form id="addStationForm">
-      <div class="form-group">
-        <label for="StationID">Station ID:</label>
-        <input type="text" id="StationID" name="StationID" required>
-      </div>
-      <div class="form-group">
-        <label for="StationName">Station Name:</label>
-        <input type="text" id="StationName" name="StationName" required>
-      </div>
-      <div class="form-group">
-        <label for="Location">Location:</label>
-        <input type="text" id="Location" name="Location" required>
-      </div>
-      <button type="button" onclick="addStation()">Add Station</button>
-    </form>
-
-    <!-- Table to display stations -->
-    <table id="stationsTable">
-      <thead>
-        <tr>
-          <th>Station ID</th>
-          <th>Station Name</th>
-          <th>Location</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Data will be populated dynamically using JavaScript -->
-      </tbody>
-    </table>
-  </div>
-
-  <div class="container">
-    <h2>Trains</h2>
-
-    <!-- Form to add a new train -->
-    <form id="addTrainForm">
-      <div class="form-group">
-        <label for="TrainID">Train ID:</label>
-        <input type="text" id="TrainID" name="TrainID" required>
-      </div>
-      <div class="form-group">
-        <label for="TrainName">Train Name:</label>
-        <input type="text" id="TrainName" name="TrainName" required>
-      </div>
-      <div class="form-group">
-        <label for="Capacity">Capacity:</label>
-        <input type="text" id="Capacity" name="Capacity" required>
-      </div>
-      <button type="button" onclick="addTrain()">Add Train</button>
-    </form>
-
-    <!-- Table to display trains -->
-    <table id="trainTable">
-      <thead>
-        <tr>
-          <th>Train ID</th>
-          <th>Train Name</th>
-          <th>Capacity</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Data will be populated dynamically using JavaScript -->
-      </tbody>
-    </table>
-  </div>
-
-  <!-- Update the form in your HTML -->
-<div class="container">
-  <h2>Routes</h2>
-
-  <!-- Form to add a new route -->
-  <form id="addRouteForm">
-    <div class="form-group">
-      <label for="RouteID">Route ID:</label>
-      <input type="text" id="RouteID" name="RouteID" required>
+    <div class= "container">
+    	<h2>Railway System Tables</h2>
     </div>
-    <div class="form-group">
-      <label for="SourceStationID">Source Station:</label>
-      <select id="SourceStationID" name="SourceStationID" required></select>
-    </div>
-    <div class="form-group">
-      <label for="IntermediateStationID">Intermediate Station:</label>
-      <select id="IntermediateStationID" name="IntermediateStationID" required></select>
-    </div>
-    <div class="form-group">
-      <label for="DestinationStationID">Destination Station:</label>
-      <select id="DestinationStationID" name="DestinationStationID" required></select>
-    </div>
-    <button type="button" onclick="addRoute()">Add Route</button>
-  </form>
+    
+    <div class="container">
+        <h2>Stations</h2>
 
-  <!-- Table to display routes -->
-  <table id="routesTable">
-    <thead>
-      <tr>
-        <th>Route ID</th>
-        <th>Source Station</th>
-        <th>Intermediate Station</th>
-        <th>Destination Station</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Data will be populated dynamically using JavaScript -->
-    </tbody>
-  </table>
-</div>
+        <!-- Form to add a new station -->
+        <form id="addStationForm">
+            <div class="form-group">
+                <label for="StationID">Station ID:</label>
+                <input type="text" id="StationID" name="StationID" required>
+            </div>
+            <div class="form-group">
+                <label for="StationName">Station Name:</label>
+                <input type="text" id="StationName" name="StationName" required>
+            </div>
+            <div class="form-group">
+                <label for="Location">Location:</label>
+                <input type="text" id="Location" name="Location" required>
+            </div>
+            <button type="button" onclick="addStation()">Add Station</button>
+        </form>
 
+        <!-- Table to display stations -->
+        <table id="stationsTable">
+            <thead>
+                <tr>
+                    <th>Station ID</th>
+                    <th>Station Name</th>
+                    <th>Location</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated dynamically using JavaScript -->
+            </tbody>
+        </table>
+    </div>
 
-  <script src="Data_entry.js"></script>
+    <br>
+
+    <div class="container">
+        <h2>Trains</h2>
+
+        <!-- Form to add a new train -->
+        <form id="addTrainForm">
+            <div class="form-group">
+                <label for="TrainID">Train ID:</label>
+                <input type="text" id="TrainID" name="TrainID" required>
+            </div>
+            <div class="form-group">
+                <label for="TrainName">Train Name:</label>
+                <input type="text" id="TrainName" name="TrainName" required>
+            </div>
+            <div class="form-group">
+                <label for="Capacity">Capacity:</label>
+                <input type="text" id="Capacity" name="Capacity" required>
+            </div>
+            <button type="button" onclick="addTrain()">Add Train</button>
+        </form>
+
+        <!-- Table to display trains -->
+        <table id="trainTable">
+            <thead>
+                <tr>
+                    <th>Train ID</th>
+                    <th>Train Name</th>
+                    <th>Capacity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated dynamically using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <!-- Update the form in your HTML -->
+    <div class="container">
+        <h2>Routes</h2>
+
+        <!-- Form to add a new route -->
+        <form id="addRouteForm">
+            <div class="form-group">
+                <label for="RouteID">Route ID:</label>
+                <input type="text" id="RouteID" name="RouteID" required>
+            </div>
+            <div class="form-group">
+                <label for="SourceStationID">Source Station:</label>
+                <select id="SourceStationID" name="SourceStationID" required></select>
+            </div>
+            <div class="form-group">
+                <label for="IntermediateStationID">Intermediate Station:</label>
+                <select id="IntermediateStationID" name="IntermediateStationID" required></select>
+            </div>
+            <div class="form-group">
+                <label for="DestinationStationID">Destination Station:</label>
+                <select id="DestinationStationID" name="DestinationStationID" required></select>
+            </div>
+            <button type="button" onclick="addRoute()">Add Route</button>
+        </form>
+
+        <!-- Table to display routes -->
+        <table id="routesTable">
+            <thead>
+                <tr>
+                    <th>Route ID</th>
+                    <th>Source Station</th>
+                    <th>Intermediate Station</th>
+                    <th>Destination Station</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated dynamically using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h2>Schedules</h2>
+
+        <!-- Form to add a new schedule -->
+        <form id="addScheduleForm">
+            <div class="form-group">
+                <label for="ScheduleID">Schedule ID:</label>
+                <input type="text" id="ScheduleID" name="ScheduleID" required>
+            </div>
+            <div class="form-group">
+                <label for="TrainID">Train ID:</label>
+                <select id="TrainID" name="TrainID" required>
+                    <!-- Options will be populated dynamically using JavaScript -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="RouteID">Route ID:</label>
+                <select id="RouteID" name="RouteID" required>
+                    <!-- Options will be populated dynamically using JavaScript -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="DepartureTime">Departure Time:</label>
+                <input type="text" id="DepartureTime" name="DepartureTime" required>
+            </div>
+            <div class="form-group">
+                <label for="ArrivalTime">Arrival Time:</label>
+                <input type="text" id="ArrivalTime" name="ArrivalTime" required>
+            </div>
+            <button type="button" onclick="addSchedule()">Add Schedule</button>
+        </form>
+
+        <!-- Table to display schedules -->
+        <table id="schedulesTable">
+            <thead>
+                <tr>
+                    <th>Schedule ID</th>
+                    <th>Train ID</th>
+                    <th>Route ID</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Time</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated dynamically using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    
+     <br>
+
+     <!-- Update the form in your HTML -->
+    <div class="container">
+        <h2>Train Staff</h2>
+
+        <!-- Form to add a new train staff -->
+        <form id="addTrainStaffForm">
+            <div class="form-group">
+                <label for="StaffID">Staff ID:</label>
+                <input type="text" id="StaffID" name="StaffID" required>
+            </div>
+            <div class="form-group">
+                <label for="TrainID_trainStaff">Train ID:</label>
+                <select id="TrainID_trainStaff" name="TrainID_trainStaff" required></select>
+            </div>
+            <div class="form-group">
+                <label for="StaffName">Staff Name:</label>
+                <input type="text" id="StaffName" name="StaffName" required>
+            </div>
+            <div class="form-group">
+                <label for="Role">Role:</label>
+                <input type="text" id="Role" name="Role" required>
+            </div>
+            <button type="button" onclick="addTrainStaff()">Add Train Staff</button>
+        </form>
+
+        <!-- Table to display train staff -->
+        <table id="trainStaffTable">
+            <thead>
+                <tr>
+                    <th>Staff ID</th>
+                    <th>Train ID</th>
+                    <th>Staff Name</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated dynamically using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="Data_entry.js"></script>
 </body>
+
 </html>
 
