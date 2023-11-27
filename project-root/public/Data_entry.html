@@ -17,10 +17,10 @@
 </head>
 
 <body>
-    <div class= "container">
-    	<h2>Railway System Tables</h2>
+    <div class="container">
+        <h2>Railway System Tables</h2>
     </div>
-    
+
     <div class="container">
         <h2>Stations</h2>
 
@@ -151,24 +151,24 @@
                 <input type="text" id="ScheduleID" name="ScheduleID" required>
             </div>
             <div class="form-group">
-                <label for="TrainID">Train ID:</label>
-                <select id="TrainID" name="TrainID" required>
+                <label for="TrainID_schedule">Train ID:</label>
+                <select id="TrainID_schedule" name="TrainID_schedule" required>
                     <!-- Options will be populated dynamically using JavaScript -->
                 </select>
             </div>
             <div class="form-group">
-                <label for="RouteID">Route ID:</label>
-                <select id="RouteID" name="RouteID" required>
+                <label for="RouteID_schedule">Route ID:</label>
+                <select id="RouteID_schedule" name="RouteID_schedule" required>
                     <!-- Options will be populated dynamically using JavaScript -->
                 </select>
             </div>
             <div class="form-group">
                 <label for="DepartureTime">Departure Time:</label>
-                <input type="text" id="DepartureTime" name="DepartureTime" required>
+                <input type="datetime-local" id="DepartureTime" name="DepartureTime" required>
             </div>
             <div class="form-group">
                 <label for="ArrivalTime">Arrival Time:</label>
-                <input type="text" id="ArrivalTime" name="ArrivalTime" required>
+                <input type="datetime-local" id="ArrivalTime" name="ArrivalTime" required>
             </div>
             <button type="button" onclick="addSchedule()">Add Schedule</button>
         </form>
@@ -190,10 +190,10 @@
             </tbody>
         </table>
     </div>
-    
-     <br>
 
-     <!-- Update the form in your HTML -->
+    <br>
+
+    <!-- Update the form in your HTML -->
     <div class="container">
         <h2>Train Staff</h2>
 
@@ -239,4 +239,3 @@
 </body>
 
 </html>
-
