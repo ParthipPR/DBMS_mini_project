@@ -6,8 +6,6 @@
       justify-content: center;
       height: 100vh;
       margin: 0;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
     .button-container {
@@ -29,3 +27,13 @@
     .button-container button:hover {
       background-color: #555; /* Darker grey color on hover */
     }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto; /* Adjusted margin */
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+  }

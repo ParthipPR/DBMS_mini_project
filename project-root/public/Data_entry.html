@@ -11,6 +11,7 @@
     <!-- Include jQuery UI library -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script defer src="Data_entry.js"></script>
 
     <title>Railway System</title>
 
@@ -21,43 +22,8 @@
         <h2>Railway System Tables</h2>
     </div>
 
-    <div class="container">
-        <h2>Stations</h2>
-
-        <!-- Form to add a new station -->
-        <form id="addStationForm">
-            <div class="form-group">
-                <label for="StationID">Station ID:</label>
-                <input type="text" id="StationID" name="StationID" required>
-            </div>
-            <div class="form-group">
-                <label for="StationName">Station Name:</label>
-                <input type="text" id="StationName" name="StationName" required>
-            </div>
-            <div class="form-group">
-                <label for="Location">Location:</label>
-                <input type="text" id="Location" name="Location" required>
-            </div>
-            <button type="button" onclick="addStation()">Add Station</button>
-        </form>
-
-        <!-- Table to display stations -->
-        <table id="stationsTable">
-            <thead>
-                <tr>
-                    <th>Station ID</th>
-                    <th>Station Name</th>
-                    <th>Location</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Data will be populated dynamically using JavaScript -->
-            </tbody>
-        </table>
-    </div>
-
-    <br>
+    
+   
 
     <div class="container">
         <h2>Trains</h2>
@@ -96,6 +62,44 @@
     </div>
 
     <br>
+    <div class="container">
+        <h2>Stations</h2>
+
+        <!-- Form to add a new station -->
+        <form id="addStationForm">
+            <div class="form-group">
+                <label for="StationID">Station ID:</label>
+                <input type="text" id="StationID" name="StationID" required>
+            </div>
+            <div class="form-group">
+                <label for="StationName">Station Name:</label>
+                <input type="text" id="StationName" name="StationName" required>
+            </div>
+            <div class="form-group">
+                <label for="Location">Location:</label>
+                <input type="text" id="Location" name="Location" required>
+            </div>
+            <button type="button" onclick="addStation()">Add Station</button>
+        </form>
+
+        <!-- Table to display stations -->
+        <table id="stationsTable">
+            <thead>
+                <tr>
+                    <th>Station ID</th>
+                    <th>Station Name</th>
+                    <th>Location</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated dynamically using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
 
     <!-- Update the form in your HTML -->
     <div class="container">
@@ -235,7 +239,7 @@
         </table>
     </div>
 
-    <script src="Data_entry.js"></script>
+   
 </body>
 
 </html>

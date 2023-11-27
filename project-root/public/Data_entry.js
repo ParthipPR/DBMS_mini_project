@@ -1,4 +1,3 @@
-// public/script.js
 
 $(document).ready(function () {
   // Fetch stations and trains on page load
