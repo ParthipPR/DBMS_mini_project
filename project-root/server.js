@@ -394,6 +394,144 @@ app.put('/trainstaff/:id', (req, res) => {
   });
 });
 
+// Function to get schedule by train name
+app.get('/scheduleByTrainName/:trainName', (req, res) => {
+  const trainName = req.params.trainName;
+
+  const query = `
+    SELECT
+        s.StationName,
+        s.Location,
+        sch.ArrivalTime,
+        sch.DepartureTime
+    FROM
+        Stations s
+    JOIN
+        Routes r ON s.StationID = r.SourceStationID OR s.StationID = r.IntermediateStationID OR s.StationID = r.DestinationStationID
+    JOIN
+        Schedules sch ON r.RouteID = sch.RouteID
+    JOIN
+        Trains t ON sch.TrainID = t.TrainID
+    WHERE
+        t.TrainName = ?
+    ORDER BY
+        sch.ArrivalTime ASC;
+  `;
+
+  db.query(query, [trainName], (error, results) => {
+    if (error) {
+      console.error('Error fetching schedule by train name:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+
+// Function to get schedule by location
+app.get('/scheduleByLocation/:location', (req, res) => {
+  const location = req.params.location;
+
+  const query = `
+    SELECT
+        t.T rainName,
+        s.StationName,
+        sch.ArrivalTime,
+        sch.DepartureTime
+    FROM
+        Trains t
+    JOIN
+        Schedules sch ON t.TrainID = sch.TrainID
+    JOIN
+        Routes r ON sch.RouteID = r.RouteID
+    JOIN
+        Stations s ON r.SourceStationID = s.StationID OR r.IntermediateStationID = s.StationID OR r.DestinationStationID = s.StationID
+    WHERE
+        s.Location = ?
+    ORDER BY
+        sch.ArrivalTime ASC;
+  `;
+
+  connection.query(query, [location], (error, results) => {
+    if (error) {
+      console.error('Error fetching schedule by location:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+
+// Example route to fetch train names
+app.get('/trainNames', (req, res) => {
+  const query = 'SELECT DISTINCT TrainName FROM Trains';
+
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      res.status(500).json({ error: 'Internal Server Error' });
+      return;
+    }
+
+    const trainNames = results.map(result => result.TrainName);
+    res.json(trainNames);
+  });
+});
+
+// Example route to fetch locations
+app.get('/locations', (req, res) => {
+  const query = 'SELECT DISTINCT Location FROM Stations';
+
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      res.status(500).json({ error: 'Internal Server Error' });
+      return;
+    }
+
+    const locations = results.map(result => result.Location);
+    res.json(locations);
+  });
+});
+
+// Function to get schedule by location
+app.get('/scheduleByLocation', (req, res) => {
+  const location = req.query.location;
+
+  const query = `
+    SELECT
+        t.TrainName,
+        s.StationName,
+        sch.ArrivalTime,
+        sch.DepartureTime
+    FROM
+        Trains t
+    JOIN
+        Schedules sch ON t.TrainID = sch.TrainID
+    JOIN
+        Routes r ON sch.RouteID = r.RouteID
+    JOIN
+        Stations s ON r.SourceStationID = s.StationID OR r.IntermediateStationID = s.StationID OR r.DestinationStationID = s.StationID
+    WHERE
+        s.Location = ?
+    ORDER BY
+        sch.ArrivalTime ASC;
+  `;
+
+  db.query(query, [location], (error, results) => {
+    if (error) {
+      console.error('Error fetching schedule by location:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+
+
 
 
 

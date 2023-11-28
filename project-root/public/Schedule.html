@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Display</title>
+    <link rel="stylesheet" href="Data_entry.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="Schedule.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Schedule Display</h1>
+
+        <div id="trainNameContainer" class="container">
+            <label for="trainName">Enter Train Name:</label>
+            <input type="text" id="trainNameInput" placeholder="Enter Train Name">
+            <button id="submitTrainQuery">Submit Query</button>
+            <div id="trainResultContainer"></div>
+        </div>
+
+        <div id="locationContainer" class="container">
+            <label for="location">Enter Location:</label>
+            <input type="text" id="locationInput" placeholder="Enter Location">
+            <button id="submitLocationQuery">Submit Query</button>
+            <div id="locationResultContainer"></div>
+        </div>
+    </div>
+</body>
+</html>
